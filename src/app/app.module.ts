@@ -1,40 +1,33 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CharacterComponent } from './components/character/components/character/character.component';
-import { CharacterListComponent } from './components/character/components/character-list/character-list.component';
-import { HomeComponent } from './components/home/home.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {NgxPaginationModule} from 'ngx-pagination';
 import { LayoutComponent } from './components/layout/layout.component';
-import { EpisodeComponent } from './components/episode/episode/episode.component';
-import { EpisodeListComponent } from './components/episode/episode-list/episode-list.component';
-import { BannerComponent } from './components/home/banner/banner.component';
-import { SearchCharacterComponent } from './components/home/component/search-character/search-character.component';
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found/page-not-found.component';
-import { FooterComponent } from './shared/components/footer/footer.component';
-import { HeaderComponent } from './shared/components/header/header.component';
+import { MaterialModule } from './components/material/material/material.module';
+import { SharedModule } from './shared/components/shared.module';
+import { PageNotFoundModule } from './components/page-not-found/page-not-found.module';
 
 @NgModule({
+
   declarations: [
     AppComponent,
-    CharacterComponent,
-    CharacterListComponent,
-    HomeComponent,
-    LayoutComponent,
-    EpisodeComponent,
-    EpisodeListComponent,
-    BannerComponent,
-    SearchCharacterComponent,
-    PageNotFoundComponent,
-    FooterComponent,
-    HeaderComponent
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+    NgxPaginationModule,
+    MaterialModule,
+    SharedModule,
+    FormsModule,
+    PageNotFoundModule
   ],
   providers: [],
   bootstrap: [AppComponent]
