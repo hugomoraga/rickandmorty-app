@@ -1,4 +1,39 @@
-/* You can add global styles to this file, and also import other style files */
+.text-center {
+    text-align: center;
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@media (min-width: 510px) {
+    .container {
+        max-width: 1110px;
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+    .text-center {
+        text-align: center;
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate( 0deg);
+    }
+    to {
+        transform: rotate( -360deg);
+    }
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: #37474F;
+}
+
+body p,
+h3 {
+    color: rgb(163, 163, 163);
+}

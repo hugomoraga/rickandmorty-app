@@ -1,5 +1,5 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Search } from '../../../../core/models/search/search';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Search } from 'src/app/core/models/search/search';
 
 @Component({
   selector: 'app-search-character',
@@ -38,8 +38,9 @@ export class SearchCharacterComponent implements OnInit {
 
   private getId(): any {
     let id = 0;
-    if(this.characterId && this.characterId !== '') {
+    if (this.characterId && this.characterId !== '') {
       id = parseFloat(this.characterId);
     }
+    return id;
   }
 }

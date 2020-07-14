@@ -5,7 +5,7 @@ import { EpisodeRoutingModule } from './episode-routing.module';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { EpisodeListComponent } from './components/episode-list/episode-list.component';
 import { EpisodeComponent } from './components/episode/episode.component';
-import { MaterialModule } from '../material/material/material.module';
+import { MaterialModule } from '../material/material.module';
 import { EpisodesService } from '../../core/services/episode/episodes.service';
 
 

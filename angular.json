@@ -32,7 +32,8 @@
                             "./node_modules/swiper/dist/css/swiper.css",
                             "./node_modules/flexboxgrid/dist/flexboxgrid.min.css",
                             "./node_modules/font-awesome/css/font-awesome.css",
-                            "src/styles.scss"
+                            "src/styles.scss",
+                            "src/theme.scss"
                         ],
                         "scripts": []
                     },

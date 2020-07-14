@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { CharacterRoutingModule } from './character-routing.module';
-import { CharacterListComponent } from './character-list/character-list.component';
-import { CharacterComponent } from './character/character.component';
+import { CharacterListComponent } from './components/character-list/character-list.component';
+import { CharacterComponent } from './components/character/character.component';
 
 
 
@@ -14,6 +14,9 @@ import { CharacterComponent } from './character/character.component';
   imports: [
     CommonModule,
     CharacterRoutingModule
+  ],
+  exports: [
+
   ]
 })
 export class CharacterModule { }

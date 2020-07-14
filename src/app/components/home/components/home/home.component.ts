@@ -1,14 +1,15 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { MatSnackBar, MatSnackBarConfig } from '@angular/material';
+import { MatSnackBar, MatSnackBarConfig, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material';
 import { Observable } from 'rxjs';
-import { map, take, tap} from 'rxjs/operators';
-import { Character } from '../../../core/models/character';
-import { SearchResult } from '../../../core/models/response/search-results';
-import { Search } from '../../../core/models/search/search';
-import { CharactersService } from '../../../core/services/character/characters.service';
-import { UtilFunctions } from 'src/app/utils/CommonUtils';
-import { Swiper } from 'swiper';
-import { MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
+import { map, take, tap } from 'rxjs/operators';
+import { Character } from 'src/app/core/models/character';
+import { SearchResult } from 'src/app/core/models/response/search-results';
+import { Search } from 'src/app/core/models/search/search';
+import { CharactersService } from 'src/app/core/services/character/characters.service';
+import { UtilFunctions } from 'src/app/utils/CommonsUtils';
+import Swiper from 'swiper';
+
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -28,11 +29,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
   asyncCharacterList: Observable<Character[]>;
 
   constructor(private charactersService: CharactersService, private snackBar: MatSnackBar) {
-    this.showDefaultGrid = true;
+    this.showDefaultGrid = false;
     this.test = false;
     this.characterList = [];
     this.page = 1;
-    this.pageSize = 20;
+    this.pageSize = 9;
     this.totalRecords = 0;
    }
 
@@ -120,7 +121,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       this.showDefaultGrid = false;
       this.characterList = [];
       this.loading = true;
-      this. charactersService.findById(id).pipe(take(1)).subscribe(
+      this.charactersService.findById(id).pipe(take(1)).subscribe(
         response => {
           this.characterList.push(response);
           this.loading = false;
